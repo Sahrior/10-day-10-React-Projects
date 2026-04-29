@@ -1,20 +1,18 @@
 import React from 'react'
-import style from './Navigation.module.css'
+import styles from './Navigation.module.css'  // ✅ FIXED
 
 const Navigation = () => {
   return (
-    <nav className={styles.Navigation} >
-        <div className='logo' >
+    <nav className={`${styles.navigation} container`}>   {/* ✅ lowercase */}
+        <div className={styles.logo}>
             <img src="/images/logo.png" alt="" />
         </div>
 
-        <ul>
+        <ul className={styles.list}>
             <li>Home</li>
             <li>About</li>
             <li>Contact</li>
         </ul>
-
-
     </nav>
   )
 }
