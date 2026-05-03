@@ -7,7 +7,7 @@ import GamePlay from './components/GamePlay'
 
 const App = () => {
 
-  const [isGameStarted, setIsGameStarted] = useState(true)
+  const [isGameStarted, setIsGameStarted] = useState(false)
 
   const toggoleGamePlay = () =>{
     setIsGameStarted(prev => !prev)
