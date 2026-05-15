@@ -1,0 +1,214 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f5f5;
+  color: #111;
+}
+
+.header{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background-color: rgb(110, 229, 110);
+}
+
+.earning{
+  
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.earning input {
+  
+  padding: 5px 9px;
+  border: 1px solid #dcdcdc;
+  border-radius: 12px;
+  outline: none;
+  font-size: 16px;
+  background: #ffffff;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.earning input:focus {
+  border-color: #222;
+  transform: translateY(-1px);
+}
+
+.earning select {
+  padding: 5px 9px;
+  border: 1px solid #dcdcdc;
+  border-radius: 12px;
+  outline: none;
+  font-size: 16px;
+  background: #ffffff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.earning select:focus {
+  border-color: #222;
+  transform: translateY(-1px);
+}
+
+.earning select option {
+  padding: 10px;
+  background: white;
+  color: #222;
+  font-size: 15px;
+}
+
+.earning button {
+  padding: 5px 18px;
+  border: none;
+  border-radius: 12px;
+  background: #111;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.earning button:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+.earning button:active {
+  transform: scale(0.98);
+}
+
+hr {
+  border: none;
+  height: 1px;
+  background: #e5e5e5;
+  margin: 20px 0;
+}
+
+.earning_list_header{
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.earning_list{
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.total_earning{
+  padding: 15px;
+}
+
+
+.expenses{
+  
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.expenses input {
+  
+  padding: 5px 9px;
+  border: 1px solid #dcdcdc;
+  border-radius: 12px;
+  outline: none;
+  font-size: 16px;
+  background: #ffffff;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.expenses input:focus {
+  border-color: #222;
+  transform: translateY(-1px);
+}
+
+.expenses select {
+  padding: 5px 9px;
+  border: 1px solid #dcdcdc;
+  border-radius: 12px;
+  outline: none;
+  font-size: 16px;
+  background: #ffffff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.expenses select:focus {
+  border-color: #222;
+  transform: translateY(-1px);
+}
+
+.expenses select option {
+  padding: 10px;
+  background: white;
+  color: #222;
+  font-size: 15px;
+}
+
+.expenses button {
+  padding: 5px 18px;
+  border: none;
+  border-radius: 12px;
+  background: #111;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.expenses button:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+.expenses button:active {
+  transform: scale(0.98);
+}
+
+.expenses_list_header{
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.expenses_list{
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.total_expenses{
+
+    padding: 15px;
+
+}
+
+
+.total_savings{
+
+    padding: 15px;
+
+}
