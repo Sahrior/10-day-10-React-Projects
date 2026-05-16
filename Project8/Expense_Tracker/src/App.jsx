@@ -1,6 +1,77 @@
-import React from 'react'
+import { useState } from "react"
+
 
 const App = () => {
+
+
+  const [money, setMoney] = useState("")
+  const [way, setWay] = useState("")
+  const [date, setDate] = useState("")
+  const [totalEarn, setTotalEarn] = useState(0)
+  const [earning, setEarning] = useState([])
+
+
+
+
+  const [expenseMoney, setExpenseMoney] = useState("")
+  const [expenseWay, setExpenseWay] = useState("")
+  const [expenseDate, setExpenseDate] = useState("")
+  const [totalExpense, setTotalExpense] = useState(0)
+  const [expense, setExpense] = useState([])
+
+
+  const [totalSaving, setTotalSaving] = useState(0)
+
+  const addExpense = () =>{
+
+    const newExpense = {
+      id: Date.now(),
+      expenseMoney : expenseMoney,
+      expenseWay : expenseWay,
+      expenseDate : expenseDate,
+    }
+
+    setTotalExpense(totalExpense+Number(expenseMoney))
+    setTotalSaving(totalSaving-Number(expenseMoney))
+
+    setExpense([...expense, newExpense])
+
+    setExpenseDate("");
+    setExpenseMoney("")
+    setExpenseWay("")
+
+  }
+
+
+
+
+  
+  const addEarning = ()=>{
+
+    const newEarning = {
+      id : Date.now(),
+      money : money,
+      way  : way,
+      date : date
+
+    }
+
+    setTotalEarn(totalEarn+Number(money))
+    setTotalSaving(totalSaving+Number(money))
+    
+
+    setEarning ([...earning, newEarning])
+    setDate("");
+    setMoney("")
+    setWay("")
+
+
+  }
+
+
+
+
+
 
 
   
@@ -14,17 +85,18 @@ const App = () => {
       </div>
 
       <div className="earning">
-        <input type="text" placeholder='Enter your earning' />
-        <select>
+        <input onChange={(e)=>setMoney(e.target.value)}  type="text" placeholder='Enter your earning' />
+        <select onChange={(e)=>setWay(e.target.value)} >
+        <option ></option>
         <option>Salary</option>
         <option>Tution</option>
         <option>Trading</option>
         <option>Others</option>
       </select>
 
-      <input type="date" />
+      <input type="date" onChange={(e)=>setDate(e.target.value)} />
 
-      <button>ADD</button>
+      <button onClick={addEarning } >ADD</button>
       </div>
 
       <div className="earning_list_header">
@@ -35,28 +107,18 @@ const App = () => {
 
       <div className="earning_lists">
 
-          <div className="earning_list">
-            <h5>1000 BDT</h5>
-            <h5>Tuition</h5>
-            <h5>15 November 2025</h5>
-          </div>
-
-          <div className="earning_list">
-            <h5>40000 BDT</h5>
-            <h5>Salary</h5>
-            <h5>1 November 2025</h5>
-          </div>
-
-          <div className="earning_list">
-            <h5>15000 BDT</h5>
-            <h5>Trading</h5>
-            <h5>17 November 2025</h5>
-          </div>
-
+            {earning.map((item) => (
+              <div className="earning_list" key={item.id}>
+                <h5>{item.money} BDT</h5>
+                <h5>{item.way}</h5>
+                <h5>{item.date}</h5>
+              </div>
+            ))}
+          
       </div>
 
       <div className="total_earning">
-        Total Earn: 66000 BDT
+        Total Earn: {totalEarn} BDT
       </div>
 
       <div className="line1">
@@ -64,8 +126,9 @@ const App = () => {
       </div>
 
       <div className="expenses">
-        <input type="text" placeholder='Enter your expenses' />
-        <select>
+        <input onChange={(e)=>setExpenseMoney(e.target.value)} type="text" placeholder='Enter your expenses' />
+        <select onChange={(e)=>setExpenseWay(e.target.value)} >
+          <option></option>
           <option>Rent</option>
           <option>Food</option>
           <option>Clothing</option>
@@ -73,9 +136,9 @@ const App = () => {
           <option>Other</option>
         </select>
 
-        <input type="date" />
+        <input type="date" onChange={(e)=>setExpenseDate(e.target.value)} />
 
-        <button>ADD</button>
+        <button onClick={addExpense} >ADD</button>
       </div>
 
       <div className="expenses_list_header">
@@ -86,31 +149,21 @@ const App = () => {
 
       <div className="expenses_lists">
 
-          <div className="expenses_list">
-            <h5>20000 BDT</h5>
-            <h5>Rent</h5>
-            <h5>5 November 2025</h5>
-          </div>
+          {expense.map((item)=>(
+            <div className="expenses_list" key={item.id} >
 
-          <div className="expenses_list">
-            <h5>5000 BDT</h5>
-            <h5>Clothing</h5>
-            <h5>15 November 2025</h5>
-          </div>
+                <h5>{item.expenseMoney} BDT</h5>
+                <h5>{item.expenseWay}</h5>
+                <h5>{item.expenseDate}</h5>
 
-
-          <div className="expenses_list">
-            <h5>7000 BDT</h5>
-            <h5>Food</h5>
-            <h5>15 November 2025</h5>
-          </div>
-
+            </div>
+          ))}
 
       </div>
 
 
       <div className="total_expenses">
-        Total Expense: 32000 BDT
+        Total Expense: {totalExpense} BDT
       </div>
 
       <div className="line2">
@@ -119,7 +172,7 @@ const App = () => {
 
 
       <div className="total_savings">
-        Total savings: 34000 BDT
+        Total savings: {totalSaving} BDT
       </div>
 
 
