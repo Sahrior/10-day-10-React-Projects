@@ -1,0 +1,112 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f5f5;
+  color: #111;
+  line-height: 1.5;
+}
+
+.main{
+
+  height: 100vh;
+  width: 100vw;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.screen{
+  background-color: white;
+  color: rgb(0, 0, 0);
+  width: 50%;
+  height: 80%;
+  border-radius: 10px;
+  border: 5px rgb(73, 73, 184) solid;
+  overflow-y: auto;
+
+}
+
+.header{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background-color: orange;
+  font-weight: bold;
+}
+
+.enter {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.enter input {
+  flex: 1; /* takes remaining space */
+  padding: 10px;
+}
+
+.enter button {
+  padding: 10px 16px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+
+  background-color: orange;
+  color: white;
+
+  border: none;
+  border-radius: 8px;
+
+  transition: all 0.3s ease;
+}
+
+
+
+.enter button:hover {
+  background-color: darkorange;
+  transform: scale(1.05);
+}
+
+.tasks{
+  display: flex;
+  flex-direction: column;
+}
+
+.task{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.tasks button{
+  padding: 8px 12px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+
+  background-color: orange;
+  color: white;
+
+  border: none;
+  border-radius: 8px;
+
+  transition: all 0.3s ease;
+}
+
+.tasks button:hover{
+  background-color: darkorange;
+  transform: scale(1.03);
+}
