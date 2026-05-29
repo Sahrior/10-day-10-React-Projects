@@ -1,0 +1,105 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f5f5;
+  color: #111;
+  line-height: 1.5;
+}
+
+.nav{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background-color: black;
+  color: white;
+}
+
+.forms{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  
+}
+
+input{
+  padding: 2px;
+}
+
+button{
+  padding: 5px;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  transition: 0.3s;
+  cursor: pointer;
+
+}
+
+button:hover{
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+}
+
+.form select{
+  padding: 3px;
+}
+
+.student-list-header{
+  display: flex;
+  padding: 10px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.empty-list{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: red;
+  height: 90vh;
+}
+
+.list{
+  display: flex;
+  padding: 10px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sort-select {
+  padding: 5px 7px;
+  border: 1px solid black;
+  background-color: white;
+  color: black;
+  font-size: 10px;
+  outline: none;
+  cursor: pointer;
+  padding: 10px;
+  margin: 10px;
+
+  appearance: none; /* removes default arrow style (clean look) */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  transition: 0.2s ease;
+}
+
+.sort-select:hover {
+  background-color: black;
+  color: white;
+}
+
+.sort-select:focus {
+  border: 2px solid black;
+  box-shadow: 0 0 0 2px black;
+}
