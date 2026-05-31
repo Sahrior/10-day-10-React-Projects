@@ -95,6 +95,7 @@ button:hover{
 }
 
 .sort-select:hover {
+  cursor: pointer;
   background-color: black;
   color: white;
 }
