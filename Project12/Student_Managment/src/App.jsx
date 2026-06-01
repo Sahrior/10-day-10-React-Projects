@@ -19,6 +19,25 @@ const App = () => {
   const [idSort, setIdSort] = useState([])
   const [isIdSort, setIsIdSort] = useState(false)
 
+  const [searchFilter, setSearchFilter] = useState("")
+  const [isSearching, setIsSearching] = useState(false)
+
+  const [filterd, setFilterd] = useState([])
+  const [filteredStudents, setFilteredStudents] = useState([])
+
+  const setSearch = (e) => {
+    const value = e.target.value;
+
+    setSearchFilter(value);
+    setIsSearching(true);
+
+    setFilteredStudents(
+      student.filter((item) =>
+        item.name.toLowerCase().includes(value.toLowerCase())
+      )
+    );
+  }
+
   const addStudent = (e) => {
 
     e.preventDefault();
@@ -120,6 +139,20 @@ const App = () => {
         </form>
       </div>
 
+      <div className="new">
+
+        <select onChange={(e) => { if (e.target.value === "grade") { sortStudentByGrade(); } else if(e.target.value==="alphabet"){ sortByAlphabet(); }  else if(e.target.value==="id") {sortById();}  }} className='sort-select' name="" id="">
+          <option value="none">Select Sort</option>
+          <option value="grade"> Sort by Grade </option>
+          <option value="alphabet">Sort by alphabetical order</option>
+          <option value="id">Sort by ID</option>
+        </select>
+
+        <input type="text"  placeholder='Search Input' className='search' onChange={(e)=>setSearch(e)} />
+
+
+      </div>
+
       <div className="student-list-header">
 
         <h4>Index</h4>
@@ -129,12 +162,7 @@ const App = () => {
 
       </div>
 
-      <select onChange={(e) => { if (e.target.value === "grade") { sortStudentByGrade(); } else if(e.target.value==="alphabet"){ sortByAlphabet(); }  else if(e.target.value==="id") {sortById();}  }} className='sort-select' name="" id="">
-        <option value="none">Select Sort</option>
-        <option value="grade"> Sort by Grade </option>
-        <option value="alphabet">Sort by alphabetical order</option>
-        <option value="id">Sort by ID</option>
-      </select>
+
 
       <div className={student.length==0?"empty-list" : "student-list"}>
           {
@@ -170,7 +198,17 @@ const App = () => {
                 </div>
               ))
 
-            ): (
+            ): isSearching ? (
+              student.length==0? showStudent :
+              filteredStudents.map((filteredStudents,index)=>(
+                <div className="list" key={index}>
+                  <p>{index+1}</p>
+                  <p>{filteredStudents.name}</p>
+                  <p>{filteredStudents.id}</p>
+                  <p>{filteredStudents.grade}</p>
+                </div>
+              ))
+            ) : (
                 student.length==0? showStudent :
                   student.map((student,index)=>(
                     <div className='list' key={index}>
