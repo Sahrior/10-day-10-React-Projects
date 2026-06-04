@@ -72,22 +72,22 @@ const Home = () => {
               </div>
 
               <div className="price-range">
-                  <button className="price-btn" onClick={()=> {setIsPriceBtn(600); setIsPriceBtn(!isPriceBtn)} } ></button>
+                  <button className="price-btn" onClick={()=> {setPriceFilter(600); setIsPriceBtn(!isPriceBtn)} } ></button>
                   <p>Under $600</p>
               </div>
 
               <div className="price-range">
-                  <button className="price-btn"  onClick={()=> {setIsPriceBtn(900); setIsPriceBtn(!isPriceBtn)} } ></button>
+                  <button className="price-btn"  onClick={()=> {setPriceFilter(900); setIsPriceBtn(!isPriceBtn)} } ></button>
                   <p>Under $900</p>
               </div>
 
               <div className="price-range">
-                  <button className="price-btn"  onClick={()=> {setIsPriceBtn(1500); setIsPriceBtn(!isPriceBtn)} } ></button>
+                  <button className="price-btn"  onClick={()=> {setPriceFilter(1500); setIsPriceBtn(!isPriceBtn)} } ></button>
                   <p>Under $1500</p>
               </div>
 
               <div className="price-range">
-                  <button className="price-btn"  onClick={()=> {setIsPriceBtn(1800); setIsPriceBtn(!isPriceBtn)} } ></button>
+                  <button className="price-btn"  onClick={()=> {setPriceFilter(1800); setIsPriceBtn(!isPriceBtn)} } ></button>
                   <p>$1800+</p>
               </div>
           </div>
