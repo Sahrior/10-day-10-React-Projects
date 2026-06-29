@@ -1,7 +1,7 @@
 const products = [
   {
     id: 1,
-    name: "iPhone 15 Pro Max",
+    name: "iPhone 16 Pro Max",
     category: "Smartphone",
     brand: "Apple",
     price: 1199,
@@ -325,7 +325,22 @@ const products = [
     reviews:250,
     stock:25,
     features:["Ergonomic","Adjustable"]
+  },
+
+    {
+    id:20,
+    name:"Gaming Chair",
+    category:"Furniture",
+    brand:"Secretlab",
+    price:399,
+    image:"https://images.unsplash.com/photo-1598550476439-6847785fcea6",
+    rating:4.7,
+    reviews:250,
+    stock:25,
+    features:["Ergonomic","Adjustable"]
   }
+
+
 ];
 
 export default products
